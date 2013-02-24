@@ -23,14 +23,14 @@ def crawler(args):
 						arg_nr = arg_nr+1
 				else:
 					print "Too few arguments!"
-	#				quit()
+					quit()
 			else:
 				print "Invalid argument!"
 				print args[arg_nr]
 			arg_nr=arg_nr+1
 	else:
 		print "Too few arguments!" 
-	#	quit()
+		quit()
 	
 	try:
 		request = urllib2.Request(url)
@@ -38,7 +38,7 @@ def crawler(args):
 		page = response.read()
 	except urllib2.URLError, exception:
 		print exception
-		#quit()
+		quit()
 
 	if not os.path.exists(to_path) and len(to_path)>0:
 		os.makedirs(to_path)
